@@ -1,5 +1,15 @@
 .sidebar-nav {
     margin-top: 20px;
-    padding: 0;
+
+    padding: 50px;
     list-style: none;
+    
 }
+a {
+    font-size: 4px;
+    color: red;
+}
+.test {
+    font-size: 4px;
+}
+* { font-family: courier !important }
