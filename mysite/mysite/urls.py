@@ -23,5 +23,6 @@ urlpatterns = [
     path('firstapp/', views.index, name='index'),
     path('r/', views.r, name='r'),
     path('resume/', views.resume, name='resume'),
+    path('firstapp/validate', views.validate, name = 'validate'),
     
 ]

@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from firstapp.models import sensorData
+from decimal import Decimal
 
 # Create your views here.
 
@@ -15,3 +18,15 @@ def resume(request):
     """View function for home page of site."""
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'Resume.html')
+
+def validate(request):
+   if request.method == 'POST':
+      tempr= request.POST["temp"]
+      humi = request.POST["hum"]
+      reading = sensorData(temp=Decimal(tempr), hum=Decimal(humi))
+      reading.save()   
+      dict = {
+         'tempr': tempr,
+         'humi': humi
+      }
+      return render(request, 'validate.html', dict)   
