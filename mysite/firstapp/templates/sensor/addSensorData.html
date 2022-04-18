@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Welcome</h1>
+  <p>Welcome to mySite, a website developed by <em>Clayton Carpenter</em>!</p>
+
+  <form action="showSensorData" method="post">
+    {% csrf_token %}
+    Temperature : <input type="text" name="temp" ><br><br>
+    Humidity : <input type="text" name = "hum"><br><br>
+  <input type="submit" value="Submit">
+
+{% endblock %}

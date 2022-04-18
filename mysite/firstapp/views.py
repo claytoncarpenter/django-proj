@@ -19,7 +19,13 @@ def resume(request):
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'Resume.html')
 
-def validate(request):
+
+def addSensorData(request):
+    """View function for home page of site."""
+    # Render the HTML template index.html with the data in the context variable
+    return render(request, 'sensor/addSensorData.html')
+
+def showSensorData(request):
    if request.method == 'POST':
       tempr= request.POST["temp"]
       humi = request.POST["hum"]
@@ -29,4 +35,4 @@ def validate(request):
          'tempr': tempr,
          'humi': humi
       }
-      return render(request, 'validate.html', dict)   
+      return render(request, 'sensor/showSensorData.html', dict) 
