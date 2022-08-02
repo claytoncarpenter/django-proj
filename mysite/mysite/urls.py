@@ -20,9 +20,10 @@ from firstapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('firstapp/', views.index, name='index'),
+    path('', views.index, name='index'),
     path('r/', views.r, name='r'),
     path('resume/', views.resume, name='resume'),
+    path('addLightData/', views.addLightData, name='addLightData'),
     path('addSensorData/', views.addSensorData, name='addSensorData'),
     path('addSensorData/showSensorData', views.showSensorData, name = 'showSensorData'),
     

@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from firstapp.models import sensorData
+from firstapp.models import sensorData, lightData
 from decimal import Decimal
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -36,3 +37,11 @@ def showSensorData(request):
          'humi': humi
       }
       return render(request, 'sensor/showSensorData.html', dict) 
+
+@csrf_exempt 
+def addLightData(request):
+   if request.method == 'GET':
+      light= request.GET["brightness"]
+      reading = lightData(brightness=int(light))
+      reading.save()   
+      return render(request, 'index.html') 
