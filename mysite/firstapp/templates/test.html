@@ -8,10 +8,40 @@
   <!-- Add additional CSS in static file -->
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <script>
+  function myFunction() {
+    if (document.getElementById('demo').style.display === 'none') {
+    document.getElementById('demo').style.display='block'; }
+    else {
+      document.getElementById('demo').style.display='none'; 
+    }
+  }
+  </script>
+
 </head>
 <body>
+  <a href="{% url 'index' %}">Home</a>
   <div class="container-fluid">
     WELCOME TO TEST
   </div>
+
+<button type="button" onclick="myFunction()">Show card data!</button>
+
+  <div class="container" id="demo" style="display:none">
+    <div class="row">
+      {% for x in reading %}
+      <div class="col-sm">
+      <div class="card">
+        <div class="card-body">
+          <p>datetime is {{ x.datetime }}</p>
+          <p>tempature is {{ x.temp }}</p>
+          <p>humidity is {{ x.hum }}</p>
+        </div>
+      </div>
+    
+    </div>
+    {% endfor %}
+  </div>
+
 </body>
 </html>

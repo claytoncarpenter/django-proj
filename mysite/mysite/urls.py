@@ -23,6 +23,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('r/', views.r, name='r'),
     path('resume/', views.resume, name='resume'),
+    path('test/', views.test, name='test'),
     path('addLightData/', views.addLightData, name='addLightData'),
     path('addSensorData/', views.addSensorData, name='addSensorData'),
     path('addSensorData/showSensorData', views.showSensorData, name = 'showSensorData'),

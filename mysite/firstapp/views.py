@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from firstapp.models import sensorData, lightData
+from firstapp.models import sensorData, lightData, myTodo
 from decimal import Decimal
 from django.views.decorators.csrf import csrf_exempt
 
@@ -19,6 +19,16 @@ def resume(request):
     """View function for home page of site."""
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'Resume.html')
+
+def test(request):
+    mydata = sensorData.objects.all()
+    context = {
+    'reading': mydata,
+  }
+    print(context)
+    """View function for home page of site."""
+    # Render the HTML template index.html with the data in the context variable
+    return render(request, 'test.html', context)
 
 
 def addSensorData(request):
