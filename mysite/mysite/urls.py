@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from firstapp import views
+from users import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +28,6 @@ urlpatterns = [
     path('addLightData/', views.addLightData, name='addLightData'),
     path('addSensorData/', views.addSensorData, name='addSensorData'),
     path('addSensorData/showSensorData', views.showSensorData, name = 'showSensorData'),
+    path('register/', user_views.register, name='register'),
     
 ]

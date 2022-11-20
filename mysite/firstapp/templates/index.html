@@ -1,6 +1,18 @@
 {% extends "base_generic.html" %}
 
+
 {% block content %}
+
+<div>
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+    </div>
+    
   <h1>Welcome</h1>
   <p>Welcome to mySite, a website developed by <em>Clayton Carpenter</em>!</p>
 
